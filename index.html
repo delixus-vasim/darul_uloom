@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 " />
+  <title>DARUL ULOOM NOORIA BARKATIA JAISHUL ULOOM </title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    :root {
+      --primary: #04a87d;
+      --secondary: #64ac88;
+      --accent: #eabc4f;
+      --light: #d9dfd3;
+      --dark: #505c77;
+
+    }
+
+    body {
+      background-color: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+      background-image: url("/api/placeholder/100/100");
+      background-size: 100px;
+      background-repeat: repeat;
+      background-position: center center;
+      background-attachment: fixed;
+      background-blend-mode: overlay;
+      background-color: rgba(153, 243, 111, 0.97);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header Styles */
+    header {
+      background-color: var(--primary);
+      color: rgb(5, 63, 24);
+      padding: 20px 0;
+
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .tagline {
+      font-style: italic;
+      opacity: 0.9;
+    }
+
+    /* Navigation Styles */
+    nav {
+      background-color: var(--secondary);
+      padding: 15px 0;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      justify-content: center;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      padding: 5px 10px;
+      border-radius: 4px;
+    }
+
+    nav ul li a:hover {
+      background-color: var(--primary);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("/api/placeholder/1200/600") no-repeat center center/cover;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 0 20px;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: var(--accent);
+      color: var(--dark);
+      padding: 12px 25px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #d8a93e;
+      transform: translateY(-2px);
+    }
+
+    /* Section Styles */
+    section {
+      padding: 60px 0;
+    }
+
+    section h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: var(--primary);
+      position: relative;
+    }
+
+    section h2::after {
+      content: "";
+      display: block;
+      width: 80px;
+      height: 3px;
+      background-color: var(--accent);
+      margin: 15px auto 0;
+    }
+
+    /* Latest Updates */
+    .updates {
+      background-color: white;
+    }
+
+    .update-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .update-card {
+      background-color: var(--light);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .update-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .update-image {
+      height: 200px;
+      background-color: #ddd;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .update-content {
+      padding: 20px;
+    }
+
+    .update-date {
+      font-size: 0.8rem;
+      color: var(--secondary);
+      margin-bottom: 10px;
+    }
+
+    .update-title {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: var(--primary);
+    }
+
+    .update-excerpt {
+      color: var(--dark);
+      margin-bottom: 15px;
+    }
+
+    .read-more {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .read-more:hover {
+      text-decoration: underline;
+    }
+
+    /* Photo Gallery */
+    .gallery {
+      background-color: var(--light);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 15px;
+    }
+
+    .gallery-item {
+      height: 250px;
+      background-color: #ddd;
+      background-size: cover;
+      background-position: center;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.03);
+    }
+
+    .gallery-item::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .gallery-item:hover::after {
+      opacity: 1;
+    }
+
+    /* Slideshow container */
+    .slideshow-container {
+      max-width: 1000px;
+      position: relative;
+      margin: auto;
+      margin-bottom: 30px;
+    }
+
+    /* Hide the images by default */
+    .mySlides {
+      display: none;
+      text-align: center;
+    }
+
+    .mySlides img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    /* Next & previous buttons */
+    .prev,
+    .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      margin-top: -22px;
+      padding: 16px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover,
+    .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    /* Caption text */
+    .text {
+      color: #f2f2f2;
+      font-size: 15px;
+      padding: 8px 12px;
+      position: absolute;
+      bottom: 8px;
+      width: 100%;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    /* The dots/bullets/indicators */
+    .dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+
+    .active,
+    .dot:hover {
+      background-color: var(--accent);
+    }
+
+    .view-all {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    /* Donation Section */
+    .donation {
+      background-color: white;
+      text-align: center;
+      background-image: url("/api/placeholder/400/400");
+      background-size: 200px;
+      background-repeat: repeat;
+      background-position: center center;
+      background-attachment: fixed;
+      background-blend-mode: overlay;
+      position: relative;
+    }
+
+    .donation::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    .donation .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .donation-methods {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .donation-box {
+      background-color: var(--light);
+      border-radius: 8px;
+      padding: 30px;
+      min-width: 300px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      text-align: left;
+      border: 1px solid #eaeaea;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .donation-box::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100px;
+      height: 100px;
+      background-image: url("/api/placeholder/100/100");
+      background-size: contain;
+      opacity: 0.1;
+      z-index: 0;
+    }
+
+    .donation-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .donation-title {
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin-bottom: 15px;
+      font-weight: bold;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .donation-title::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 2px;
+      background-color: var(--accent);
+    }
+
+    .account-details {
+      margin-bottom: 20px;
+      color: var(--dark);
+      position: relative;
+      z-index: 1;
+    }
+
+    .account-details p {
+      margin-bottom: 10px;
+    }
+
+    .account-details strong {
+      color: var(--primary);
+    }
+
+    .qr-code {
+      width: 150px;
+      height: 150px;
+      background-color: #fff;
+      margin: 20px auto;
+      padding: 10px;
+      border: 1px solid #ddd;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .donation-form {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 30px;
+      background-color: var(--light);
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: var(--primary);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 10px 15px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--secondary);
+    }
+
+    /* Footer Styles */
+    footer {
+      background-color: var(--primary);
+      color: white;
+      padding: 40px 0 20px;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 30px;
+    }
+
+    .footer-section {
+      flex: 1;
+      min-width: 250px;
+      margin-bottom: 20px;
+      padding: 0 15px;
+    }
+
+    .footer-section h3 {
+      margin-bottom: 15px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .footer-section h3::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 50px;
+      height: 2px;
+      background-color: var(--accent);
+    }
+
+    .contact-info div {
+      margin-bottom: 10px;
+    }
+
+    .social-links a {
+      display: inline-block;
+      margin-right: 10px;
+      color: white;
+      font-size: 1.2rem;
+      transition: transform 0.3s ease;
+    }
+
+    .social-links a:hover {
+      transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav ul li {
+        margin: 5px 0;
+      }
+
+      .donation-options {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header Section -->
+  <header>
+    <div class="container"
+      style="text-align: center; margin: 0 auto; display: flex; flex-direction: column; align-items: center;">
+      <div style="
+          margin-top: 20px;
+          font-style: italic;
+          font-family: 'Arabic Typesetting', Arial, sans-serif;
+          font-size: 1.5rem;
+        ">
+        بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم
+      </div>
+      <div class="logo"> <img src="./images/logo1.jpg" alt="Madrasa Logo" width="130"
+          height="130">DARUL ULOOM NOORIA BARKATIA JAISHUL ULOOM</div>
+      <div class="tagline">Nurturing Faith, Knowledge, and Character</div>
+
+    </div>
+
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="container">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#updates">Updates</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#programs">Programs</a></li>
+        <li><a href="#donate">Donate</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div style="
+          position: absolute;
+          top: 20px;
+          right: 20px;
+          width: 80px;
+          height: 80px;
+          background-image: url('/api/placeholder/80/80');
+          background-size: contain;
+          background-repeat: no-repeat;
+          opacity: 0.8;
+        "></div>
+    <div style="
+          position: absolute;
+          bottom: 20px;
+          left: 20px;
+          width: 100px;
+          height: 100px;
+          background-image: url('/api/placeholder/100/100');
+          background-size: contain;
+          background-repeat: no-repeat;
+          opacity: 0.6;
+        "></div>
+    <h1>Welcome to Darul Uloom Noria Barkatia Jaishul Uloom</h1>
+    <p>
+      Providing quality Islamic education, nurturing spiritual growth, and
+      building a strong community foundation for future generations.
+    </p>
+    <a href="#donate" class="btn">Support Our Mission</a>
+  </section>
+
+  <!-- Latest Updates Section -->
+  <section class="updates" id="updates">
+    <div class="container">
+      <h2>Latest Updates</h2>
+      <div class="update-grid">
+        <!-- Update 1 -->
+        <div class="update-card">
+          <div class="update-image" style="background-image: url('images/9.jpg') " width="30" height="30"></div>
+          <div class="update-content">
+            <div class="update-date">March 10, 2025</div>
+            <h3 class="update-title">
+              Independence day Celebration
+            </h3>
+            <p class="update-excerpt">
+              Join us for our special Independence Day celebration at the Madrasa on August 15th. Festivities include
+              flag hoisting, cultural performances, and community lunch.
+            </p>
+
+            <a href="#" class="read-more">Read More</a>
+          </div>
+        </div>
+
+        <!-- Update 2 -->
+        <div class="update-card">
+          <div class="update-image" style="background-image: url('images/35.jpg')"></div>
+          <div class="update-content">
+            <div class="update-date">March 5, 2025</div>
+            <h3 class="update-title">New Weekend Islamic Classes</h3>
+            <p class="update-excerpt">
+              We're excited to announce new weekend classes for working adults
+              who want to deepen their understanding of Islam.
+            </p>
+            <a href="#" class="read-more">Read More</a>
+          </div>
+        </div>
+
+        <!-- Update 3 -->
+        <div class="update-card">
+          <div class="update-image" style="background-image: url('images/31.jpg')"></div>
+          <div class="update-content">
+            <div class="update-date">February 28, 2025</div>
+            <h3 class="update-title">Community Iftar Planning Committee</h3>
+            <p class="update-excerpt">
+              Volunteers needed for our Ramadan community iftar planning
+              committee. Help us organize this blessed event.
+            </p>
+            <a href="#" class="read-more">Read More</a>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <!-- Photo Gallery Section -->
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <h2>Event Gallery</h2>
+
+      <!-- Automatic Slideshow -->
+      <div class="slideshow-container">
+        <!-- Full-width images with caption text -->
+        <div class="mySlides fade">
+          <img src="./images/0.jpg" alt="Madrasa View" />
+          <div class="text">Madrasa View</div>
+        </div>
+
+        <div class="mySlides fade">
+          <img src="./images/1.jpg" alt="Madrasa Students" />
+          <div class="text">Madrasa Students</div>
+        </div>
+
+        <div class="mySlides fade">
+          <img src="./images/2.jpg" alt="Students reciting dua" />
+          <div class="text">Students reciting dua</div>
+        </div>
+
+        <div class="mySlides fade">
+          <img src="./images/3.jpg" alt="Meals" />
+          <div class="text">Meals</div>
+        </div>
+
+        <div class="mySlides fade">
+          <img src="./images/4.jpg" alt="Students reciting Quran" />
+          <div class="text">Students reciting Quran</div>
+        </div>
+
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+      <br />
+
+      <!-- The dots/circles -->
+      <div style="text-align: center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
+      </div>
+
+      <!-- Image Grid -->
+      <!-- Image Grid with Lightbox functionality -->
+      <div class="image-grid">
+        <div class="gallery-item" style="background-image: url('images/19.jpg')"
+          onclick="openLightbox('images/19.jpg')"></div>
+        <div class="gallery-item" style="background-image: url('images/21.jpg')"
+          onclick="openLightbox('images/21.jpg')"></div>
+        <div class="gallery-item" style="background-image: url('images/22.jpg')"
+          onclick="openLightbox('images/22.jpg')"></div>
+        <div class="gallery-item" style="background-image: url('images/24.jpg')"
+          onclick="openLightbox('images/24.jpg')"></div>
+        <div class="gallery-item" style="background-image: url('images/25.jpg')"
+          onclick="openLightbox('images/25.jpg')"></div>
+        <div class="gallery-item" style="background-image: url('images/26.jpg')"
+          onclick="openLightbox('images/26.jpg')"></div>
+        <div class="gallery-item" style="background-image: url('images/27.jpg')"
+          onclick="openLightbox('images/27.jpg')"></div>
+        <div class="gallery-item" style="background-image: url('images/28.jpg')"
+          onclick="openLightbox('images/28.jpg')"></div>
+        <div class="gallery-item" style="background-image: url('images/29.jpg')"
+          onclick="openLightbox('images/29.jpg')"></div>
+      </div>
+
+      <!-- Lightbox Container -->
+      <div id="lightbox" class="lightbox">
+        <span class="close-button" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img" class="lightbox-content">
+      </div>
+
+      <style>
+        /* Grid container */
+        .image-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          /* 3 columns */
+          grid-gap: 10px;
+          /* Smaller gap between items */
+          max-width: 800px;
+          /* Limit the overall width */
+          margin: 0 auto;
+          /* Center the grid */
+        }
+
+        /* Individual gallery items */
+        .gallery-item {
+          height: 150px;
+          /* Smaller height */
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+          transform: scale(1.05);
+        }
+
+        /* Lightbox styles */
+        .lightbox {
+          display: none;
+          position: fixed;
+          z-index: 1000;
+          padding-top: 50px;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          overflow: auto;
+          background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .lightbox-content {
+          margin: auto;
+          display: block;
+          max-width: 90%;
+          max-height: 90%;
+        }
+
+        .close-button {
+          position: absolute;
+          top: 15px;
+          right: 35px;
+          color: white;
+          font-size: 40px;
+          font-weight: bold;
+          transition: 0.3s;
+          cursor: pointer;
+        }
+
+        .close-button:hover {
+          color: #bbb;
+        }
+
+        /* Responsive for smaller screens */
+        @media (max-width: 600px) {
+          .image-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+
+        @media (max-width: 400px) {
+          .image-grid {
+            grid-template-columns: 1fr;
+          }
+        }
+      </style>
+
+      <script>
+        function openLightbox(imgSrc) {
+          document.getElementById('lightbox').style.display = 'block';
+          document.getElementById('lightbox-img').src = imgSrc;
+        }
+
+        function closeLightbox() {
+          document.getElementById('lightbox').style.display = 'none';
+        }
+
+        // Close lightbox when clicking outside the image
+        window.onclick = function (event) {
+          const lightbox = document.getElementById('lightbox');
+          if (event.target == lightbox) {
+            closeLightbox();
+          }
+        }
+
+        // Close lightbox when pressing escape key
+        document.addEventListener('keydown', function (event) {
+          if (event.key === 'Escape') {
+            closeLightbox();
+          }
+        });
+      </script>
+    </div>
+  </section>
+
+  <!-- Donation Section -->
+  <section class="donation" id="donate">
+    <div class="container">
+      <h2>Support Our Madrasa</h2>
+      <p style="max-width: 800px; margin: 0 auto 40px; position: relative">
+        "The Prophet (peace be upon him) said “sadaqah extinguishes sin as water extinguishes fire” (Hadith,
+        Tirmidhi). He also said that Allah offers relief on the Day of Judgement for those who give sadaqah: “The
+        believer's shade on the Day of Resurrection will be their charity” (Hadith, Tirmidhi)."
+
+      </p>
+
+      <div class="donation-methods">
+        <!-- Bank Transfer -->
+        <div class="donation-box">
+          <h3 class="donation-title">Bank Transfer</h3>
+          <div class="account-details">
+            <p><strong>Bank Name:</strong> HDFC Bank</p>
+            <p><strong>Account Holder:</strong> DARUL ULOOM NOORIA BARKATIA JAISHUL ULOOM & JAMIA BARKAT-E- AYESHA
+              LIL BANAAT</p>
+            <p><strong>Account Number:</strong> 50200091711662</p>
+            <p><strong>IFSC CODE</strong> HDFC0005273</p>
+            <p>
+              <strong>Reference:</strong> Please include "Donation" and your
+              name in the reference
+            </p>
+          </div>
+        </div>
+
+        <!-- Mobile Payment -->
+        <div class="donation-box">
+          <h3 class="donation-title">UPI Scanner</h3>
+          <div class="account-details">
+            <p>
+              Scan the QR code below with your banking app or mobile payment
+              service:
+            </p>
+            <div class="qr-code">
+              <img src="./images/scanner.jpeg" alt="Payment QR Code" width="130"
+                height="130" />
+            </div>
+            <p><strong>Mobile Number:</strong> +91 9572005786 / +91 7301957786 / +91 9060626786</p>
+            <p><strong>UPI ID: </strong> barkatiziya7861@ybl</p>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Custom Donation Form -->
+      <div class="donation-form">
+        <h3 style="margin-bottom: 20px; color: var(--primary)">
+          Custom Donation
+        </h3>
+        <form>
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" class="form-control" placeholder="Your Name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" class="form-control" placeholder="Your Email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="amount">Donation Amount (₹)</label>
+            <input type="number" id="amount" class="form-control" placeholder="Enter amount" min="100" required />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message (Optional)</label>
+            <textarea id="message" class="form-control" rows="4"
+              placeholder="Any specific purpose for your donation?"></textarea>
+          </div>
+
+          <button type="submit" class="btn" style="width: 100%">
+            Proceed to Payment
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <form id="contactForm">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <input type="text" name="subject" placeholder="Subject" required>
+    <textarea name="message" placeholder="Your Message" required></textarea>
+    <button type="submit">Send</button>
+  </form>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Get form data
+      const name = this.elements['name'].value;
+      const email = this.elements['email'].value;
+      const subject = this.elements['subject'].value;
+      const message = this.elements['message'].value;
+
+      // Open mail client with pre-filled data
+      window.location.href = `mailto:mumtaj.muv@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\n' + message)}`;
+
+      // Provide feedback to user
+      alert('Thank you for your feedback! Your email client should open now.');
+    });
+  </script>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <!-- About Section -->
+        <div class="footer-section">
+          <h3>About DARUL ULOOM NOORIA BARKATIA JAISHUL ULOOM</h3>
+          <p>
+            DARUL ULOOM NOORIA BARKATIA JAISHUL ULOOM is an Islamic Madrasa is dedicated to providing quality
+            Islamic
+            education, fostering spiritual growth, and building a vibrant
+            Muslim community.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul style="list-style: none">
+            <li>
+              <a href="#" style="color: white; text-decoration: none">Our Programs</a>
+            </li>
+            <li>
+              <a href="#" style="color: white; text-decoration: none">Faculty & Staff</a>
+            </li>
+            <li>
+              <a href="#" style="color: white; text-decoration: none">Academic Calendar</a>
+            </li>
+            <li>
+              <a href="#" style="color: white; text-decoration: none">Volunteer</a>
+            </li>
+            <li>
+              <a href="#" style="color: white; text-decoration: none">FAQ</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <div class="contact-info">
+            <div>
+              <i class="fas fa-map-marker-alt"></i> Baira parsa, Madhubani, Bihar, India (Pin Code: 847226)
+            </div>
+            <div><i class="fas fa-phone"></i> +91 9572005786</div>
+            <div><i class="fas fa-envelope"></i> rraza2653@gmail.com</div>
+          </div>
+          <div class="social-links" style="margin-top: 15px">
+            <a href="#"><i class="fab fa-facebook-f">FB</i></a>
+            <a href="#"><i class="fab fa-twitter">TW</i></a>
+            <a href="#"><i class="fab fa-instagram">IG</i></a>
+            <a href="#"><i class="fab fa-youtube">YT</i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 DARUL ULOOM NOORIA BARKATIA JAISHUL ULOOM. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Simple JavaScript for handling navigation scroll
+    document.querySelectorAll('nav a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute("href")).scrollIntoView({
+          behavior: "smooth",
+        });
+      });
+    });
+
+    // Automatic Slideshow
+    let slideIndex = 0;
+    showSlides();
+
+    // Next/previous controls
+    function plusSlides(n) {
+      showSlidesByIndex((slideIndex += n));
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+      showSlidesByIndex((slideIndex = n - 1));
+    }
+
+    function showSlidesByIndex(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+
+      if (n >= slides.length) {
+        slideIndex = 0;
+      }
+      if (n < 0) {
+        slideIndex = slides.length - 1;
+      }
+
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+
+      slides[slideIndex].style.display = "block";
+      dots[slideIndex].className += " active";
+    }
+
+    function showSlides() {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+
+      slideIndex++;
+
+      if (slideIndex > slides.length) {
+        slideIndex = 1;
+      }
+
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+
+      // Change image every 5 seconds
+      setTimeout(showSlides, 5000);
+    }
+  </script>
+</body>
+
+</html>
