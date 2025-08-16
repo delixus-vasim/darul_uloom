@@ -629,6 +629,14 @@
       object-position: center 20%; /* Moves the 2nd image down in the frame */
     }
 
+    .trustee-grid .trustee-profile:nth-child(4) .trustee-image {
+      object-position: center 10%; /* Moves the 4th image down in the frame */
+    }
+
+    .trustee-grid .trustee-profile:nth-child(5) .trustee-image {
+      object-position: center 10%; /* Moves the 5th image down in the frame */
+    }
+
     .trustee-info h3 {
       margin-bottom: 5px;
       color: var(--primary); /* Uses your site's primary green color */
@@ -857,6 +865,16 @@
         </div>
 
         <div class="mySlides fade">
+          <img src="./images/41.jpg" alt="JAMIA BARKATE AAISHA LIL-BANAT" />
+          <div class="text">Girl Students Maktab</div>
+        </div>
+
+        <div class="mySlides fade">
+          <img src="./images/42.jpg" alt="JAMIA BARKATE AAISHA LIL-BANAT" />
+          <div class="text">JAMIA BARKATE AAISHA LIL-BANAT</div>
+        </div>
+
+        <div class="mySlides fade">
           <img src="./images/0.jpg" alt="Madrasa View" />
           <div class="text">Madrasa View</div>
         </div>
@@ -891,6 +909,11 @@
           <div class="text">Madrasa Wazu Khana</div>
         </div>
 
+        <div class="mySlides fade">
+          <img src="./images/45.jpg" alt="JAMIA BARKATE AAISHA LIL-BANAT" />
+          <div class="text">Students Having Food</div>
+        </div>
+
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
       </div>
@@ -905,6 +928,10 @@
         <span class="dot" onclick="currentSlide(6)"></span>
         <span class="dot" onclick="currentSlide(7)"></span>
         <span class="dot" onclick="currentSlide(8)"></span>
+        <span class="dot" onclick="currentSlide(9)"></span>
+        <span class="dot" onclick="currentSlide(10)"></span>
+        <span class="dot" onclick="currentSlide(11)"></span>
+        <span class="dot" onclick="currentSlide(12)"></span>
       </div>
 
       <div class="image-grid">
@@ -1036,6 +1063,11 @@
     <div class="container">
       <h2>Video Gallery</h2>
       <div class="video-grid">
+        <div class="video-item" onclick="openVideo('https://www.youtube.com/embed/krx34_6MX2Q')">
+          <img src="https://img.youtube.com/vi/krx34_6MX2Q/0.jpg" alt="Video Thumbnail">
+          <div class="play-button">&#9658;</div>
+        </div>
+
         <div class="video-item" onclick="openVideo('https://www.youtube.com/embed/-mcRRhBX4fY')">
           <img src="https://img.youtube.com/vi/-mcRRhBX4fY/0.jpg" alt="Video Thumbnail">
           <div class="play-button">&#9658;</div>
@@ -1044,14 +1076,8 @@
         <div class="video-item" onclick="openVideo('https://www.youtube.com/embed/7tZcWiYGCsA')">
           <img src="https://img.youtube.com/vi/7tZcWiYGCsA/0.jpg" alt="Video Thumbnail">
           <div class="play-button">&#9658;</div>
-        <!-- </div>
-
-        <div class="video-item" onclick="openVideo('https://www.youtube.com/embed/QH2-TGUlwu4')">
-          <img src="https://img.youtube.com/vi/QH2-TGUlwu4/0.jpg" alt="Video Thumbnail">
-          <div class="play-button">&#9658;</div>
-        </div> -->
-
         </div>
+      </div>
     </div>
   </section>
 
@@ -1165,6 +1191,22 @@
         </div>
       </div>
 
+      <div class="trustee-profile">
+        <img src="./images/member1.jpg" alt="MD Shahzad Bilali" class="trustee-image">
+        <div class="trustee-info">
+          <h3>MD Shahzad Bilali</h3>
+          <p class="trustee-designation">Member</p>
+        </div>
+      </div>
+
+      <div class="trustee-profile">
+        <img src="./images/member2.jpg" alt="Haji Shakir Husain" class="trustee-image">
+        <div class="trustee-info">
+          <h3>Haji Shakir Husain</h3>
+          <p class="trustee-designation">Member</p>
+        </div>
+      </div>
+    
     </div>
   </div>
 </section>
