@@ -371,6 +371,10 @@
       transition: transform 0.3s ease;
     }
 
+    .flip-horizontal iframe {
+      transform: scaleX(-1);
+    }
+
     .video-item:hover {
       transform: translateY(-5px);
     }
@@ -990,6 +994,7 @@
         <div class="gallery-item" style="background-image: url('images/27.jpg')" onclick="openLightbox('images/27.jpg')"></div>
         <div class="gallery-item" style="background-image: url('images/28.jpg')" onclick="openLightbox('images/28.jpg')"></div>
         <div class="gallery-item" style="background-image: url('images/29.jpg')" onclick="openLightbox('images/29.jpg')"></div>
+        <div class="gallery-item" style="background-image: url('images/55.jpg')" onclick="openLightbox('images/55.jpg')"></div>
       </div>
 
       <div id="lightbox" class="lightbox">
@@ -1126,6 +1131,11 @@
 
         <div class="video-item" onclick="openVideo('https://www.youtube.com/embed/zrAIT1bjgQI')">
           <img src="https://img.youtube.com/vi/zrAIT1bjgQI/0.jpg" alt="Video Thumbnail">
+          <div class="play-button">&#9658;</div>
+        </div>
+
+         <div class="video-item fix-orientation" onclick="openVideo('https://www.youtube.com/embed/-oD3sB61P4M')">
+          <img src="https://img.youtube.com/vi/-oD3sB61P4M/0.jpg" alt="Video Thumbnail">
           <div class="play-button">&#9658;</div>
         </div>
       </div>
